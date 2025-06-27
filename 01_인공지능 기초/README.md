@@ -13,6 +13,8 @@ https://wikidocs.net/4307
 <br>
 
 
+
+### tensorflow 설치
 python -m pip install --upgrade pip  <br>
 pip3 install tensorflow==2.10.0 <br>
 
