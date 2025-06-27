@@ -1,0 +1,33 @@
+** Google Qwiklabs (Cloud Skills Boost) 추가 실습 목록
+
+[Course: Manage Kubernetes in Google Cloud]
+https://www.cloudskillsboost.google/course_templates/783?locale=en
+
+[1] Managing Deployments Using Kubernetes Engine  : (Kubernetes 기본)
+https://www.cloudskillsboost.google/course_templates/783/labs/408508?locale=ko
+
+(GCP계정에서 실습시 먼저 Kubernetes Engine API 를 enable 시켜줘야함)
+
+Kubernetes의 Pod는 Kubernetes의 가장 작은 배포 가능한 컴퓨팅 유닛이다. 하나 이상의 컨테이너(대부분의 경우 Docker 컨테이너)로 구성되며, 동일한 네트워크 네임스페이스, IP 주소, 포트 공간을 공유한다. Pod는 애플리케이션의 단일 인스턴스를 실행하는 데 필요한 리소스를 묶는 역할을 한다.
+
+(실습 종료후 Kubernetes Engine에 가서 클러스트 'bootcamp'를 삭제해준다) 의
+(Autopilot 클러스터를 만들어서 사용하기를 추천)
+
+
+
+[2] App Engine: Qwik Start - Python     : (App Engine 기본)
+https://www.cloudskillsboost.google/focuses/1014?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=33343095
+
+
+[3] Automatically Deploy Python Web Apps from Version Control to Cloud Run   : (Cloud Run 기본)
+https://www.cloudskillsboost.google/focuses/80415?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=33521941
+(참고 :  https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service?hl=ko)
+
+Note:The lab works best if you have an existing GitHub account. If a new GitHub account is created for this lab, 
+the account may be marked as spam by Cloud Build, and the Cloud Build app could show a 404 error after clicking on 
+the Install CloudBuild App button on a new Github account. Creating a new GitHub account in order to run this lab 
+is not recommended.
+
+git cli 사용법 : https://covenant.tistory.com/206
+
+웹브라우저에서 https://hello-world-a4bzi6enla-uc.a.run.app 접근(주소는 각자 다름)

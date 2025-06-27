@@ -1,0 +1,123 @@
+[WSL2 설치]
+https://learn.microsoft.com/ko-kr/windows/wsl/install
+wsl --install
+
+- powershell에서
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+[Ubuntu 20.04 LTS설치]
+온라인 스토어를 통해 다운로드할 수 있는 Linux 배포판 목록을 보려면 
+wsl --list --online 또는 wsl -l -o를 입력합니다.
+wsl --install -d "Ubuntu-20.04"
+
+
+[Linux용 Windows 하위 시스템 Linux GUI 앱 실행]
+https://learn.microsoft.com/ko-kr/windows/wsl/tutorials/gui-apps?source=recommendations
+
+sudo apt install gedit -y
+sudo apt install gimp -y
+sudo apt install nautilus -y
+sudo apt install vlc -y
+sudo apt install x11-apps -y
+
+[Google Chrome 설치]
+cd /tmp
+sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt install --fix-broken -y
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+시작하려면 google-chrome을(를) 입력합니다.
+
+
+
+[WSL Anaconda설치]
+https://seethefuture.tistory.com/131
+
+# 콘다 최신버전 다운로드
+wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+
+# 콘다 설치
+bash Anaconda3-2022.10-Linux-x86_64.sh
+
+# 경로 설정
+vi ~/.bashrc
+
+vi 편집기를 통해 들어가서 맨 마지막에 아래의 경로 PATH 설정
+export PATH=/home/digicope/anaconda3/bin:$PATH
+
+# 설정된 경로 실행 
+source ~/.bashrc
+
+# 콘다 버전 확인
+conda --version
+
+# jupyter notebook 실행
+jupyter notebook
+
+# jupyter notebook에서 텐서플로우 설치
+! pip install tenserflow
+
+
+[한글 폰트 설치]
+https://julialang.kr/?p=3181
+
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt-get install fonts-nanum fonts-nanum-coding fonts-nanum-extra
+
+
+# locale 확인
+$ locale
+
+# locale 변경
+# ko_KR.UTF8 선택
+$ sudo dpkg-reconfigure locales
+
+[WSL에서 ML용 GPU 가속 시작]
+https://learn.microsoft.com/ko-kr/windows/wsl/tutorials/gpu-compute
+
+[cuda toolkit 설치]
+hhttps://developer.nvidia.com/cuda-11.2.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=WSLUbuntu&target_version=20&target_type=deblocal
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda-repo-wsl-ubuntu-11-2-local_11.2.0-1_amd64.deb
+sudo dpkg -i cuda-repo-wsl-ubuntu-11-2-local_11.2.0-1_amd64.deb
+sudo apt-key add /var/cuda-repo-wsl-ubuntu-11-2-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+
+export PATH=$PATH:/usr/local/cuda-11.2/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.2/lib64
+export CUDADIR=/usr/local/cuda-11.2
+source /etc/profile
+
+[cudnn 설치]
+https://donggyu-oh.tistory.com/5
+
+https://developer.nvidia.com/rdp/cudnn-download에서 로그인한 다음
+cudnn-linux-x86_64-8.8.1.3_cuda11-archive.tar.x 파일을 다운로드한다
+
+1. tar -xvf /mnt/c/Users/storm/Downloads/cudnn-linux-x86_64-8.8.1.3_cuda11-archive.tar.xz
+2. sudo cp ./cudnn-linux-x86_64-8.8.1.3_cuda11-archive/include/* /usr/local/cuda-11.2/include
+
+3. sudo cp -P ./cudnn-linux-x86_64-8.8.1.3_cuda11-archive/lib/* /usr/local/cuda-11.2/lib64
+
+4. sudo sudo chmod a+r /usr/local/cuda-11.2/lib64/libcudnn*
+tensorflow 2.9.0 동작
+
+
+[tensor rt 다운로드 설치 : tensorflow 2.10.0 이상시]
+https://developer.nvidia.com/nvidia-tensorrt-8x-download
+! pip install nvidia-tensorrt
+
+[WSL 삭제]
+Windows PowerShell 실행
+C:\> wsl -l
+Linux용 Windows 하위 시스템 배포:
+Ubuntu(기본값)
+C:\> wsl --unregister Ubuntu
+등록 취소 중...
+
+# 이미지 파일 경로
+ C:\Users\storm\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\ext4.vhdx

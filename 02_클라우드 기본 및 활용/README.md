@@ -1,4 +1,4 @@
-### 02_클라우드 기본 및 활용
+### 02_GCP기본 및 활용
 
 
 ## GCP 활용
@@ -23,3 +23,4 @@ https://www.cloudskillsboost.google/course_templates/52
 - 04.Smart Analytics, Machine Learning, and AI on Google Cloud <br>
 https://www.cloudskillsboost.google/course_templates/55
  
+
