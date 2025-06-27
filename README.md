@@ -1,6 +1,6 @@
 
 
-##  Google Cloud 클라우드 개발자 양성 과정 (2025.06.30~09.12)
+##  Google 클라우드 개발자 양성 과정 (2025.06.30~09.12)
 <br>
 
 ## git 주소 :    https://github.com/digicope/gcp_lab_0630
