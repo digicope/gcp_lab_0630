@@ -1,0 +1,48 @@
+* 텐서플로 GPU 버전 설치방법 (작성일: 2024-06-27 목요일 )
+
+# RTX3060 12G:  Compute Capability 8.6, CUDA Core : 3584
+
+# https://developer.nvidia.com/CUDA-toolkit-Archive
+
+[ 설치 요약 ]
+1. NVIDIA GPU (본문서는 GTX3060  12G /Windows 11으로 테스트함 )  
+2. CUDA Toolkit 11.2  
+3. CuDNN 8.1.0
+4. Python 3.10 
+
+5. Tensorflow 2.10.0
+설치 방법 https://sodayeong.tistory.com/227
+
+[ 설치 순서 ]
+
+ nvidia 드라이버 설치 후
+
+1. CUDA Toolkit 11.2  버전 설치 : https://developer.nvidia.com/cuda-11-2-0-download-archive 에서
+cuda_11.2.0_460.89_win10.exe를 다운 받아 실행
+
+    윈도우 환경변수의 Path에 아래 세개 추가(생략가능, 위 설치방법 URL 참조,)
+     C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin
+     C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\libnvvp
+     C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\extras\CUPTI\libx64 
+
+2. CuDNN 8.1.0 버전 설치(NVIDIA 계정가입 로그인 필요) :  https://developer.nvidia.com/rdp/cudnn-download
+     cudnn-windows-x86_64-8.1.0.xx_cuda11-archive을 다운 받아 압축해제후
+      C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\ 안에 복사해 넣는다(위 설치방법 URL 참조)
+   
+3. zlibwapi.dll 추가 설치(불필요)
+https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-zlib-windows 사이트 참조
+
+http://www.winimage.com/zLibDll/zlib123dllx64.zip 을 다운 받아 압축해제  후
+zlibwapi.dll 파일을 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin 안에 복사해 넣는다
+
+
+4. Anaconda 텐서플로 설치 가상 환경 만들기
+Anaconda Prompt를 관리자 권한으로 실행하고 아래 명령을 실행한다
+
+conda create -n tf210 python=3.10 anaconda
+conda activate tf210
+conda update pip
+pip3 install tensorflow==2.10.0
+
+
+
